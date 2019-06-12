@@ -1,0 +1,331 @@
+mapping.json but with explanation of fields:
+
+{
+    "enrl_classes":{
+        "codetable":[
+            [1  ,5  ,0],	    # Year
+            [3  ,165,1],	    # Tenured_Less-than-1000-level_Classes
+            [4  ,166,1],	    # Tenured_Undergraduate_Classes
+            [5  ,167,1],	    # Tenured_4000-level_Classes
+            [6  ,168,1],	    # Tenured_Graduate_Classes
+            [7  ,170,1],	    # Tenured_Language_Classes
+            [8  ,171,1],	    # Tenured_Music-performance_Classes
+            [9  ,174,1],	    # NTBOT_Less-than-1000-level_Classes
+            [10 ,175,1],	    # NTBOT_Undergraduate_Classes
+            [11 ,176,1],	    # NTBOT_4000-level_Classes
+            [12 ,177,1],	    # NTBOT_Graduate_Classes
+            [13 ,179,1],	    # NTBOT_Language_Classes
+            [14 ,180,1],	    # NTBOT_Music-performance_Classes
+            [21 ,183,1],	    # Lecturer_Less-than-1000-level_Classes
+            [22 ,184,1],	    # Lecturer_Undergraduate_Classes
+            [23 ,185,1],	    # Lecturer_4000-level_Classes
+            [24 ,186,1],	    # Lecturer_Graduate_Classes
+            [25 ,188,1],	    # Lecturer_Language_Classes
+            [26 ,189,1],	    # Lecturer_Music-performance_Classes
+            [27 ,192,1],	    # Supplemental_Less-than-1000-level_Classes
+            [28 ,193,1],	    # Supplemental_Undergraduate_Classes
+            [29 ,194,1],	    # Supplemental_4000-level_Classes
+            [30 ,195,1],	    # Supplemental_Graduate_Classes
+            [31 ,197,1],	    # Supplemental_Language_Classes
+            [32 ,198,1],	    # Supplemental_Music-performance_Classes
+            [33 ,201,1],	    # Part-time_Less-than-1000-level_Classes
+            [34 ,202,1],	    # Part-time_Undergraduate_Classes
+            [35 ,203,1],	    # Part-time_4000-level_Classes
+            [36 ,204,1],	    # Part-time_Graduate_Classes
+            [37 ,206,1],	    # Part-time_Language_Classes
+            [38 ,207,1],	    # Part-time_Music-performance_Classes
+            [39 ,210,1],	    # Graduate-student_Less-than-1000-level_Classes
+            [40 ,211,1],	    # Graduate-student_Undergraduate_Classes
+            [41 ,212,1],	    # Graduate-student_4000-level_Classes
+            [42 ,213,1],	    # Graduate-student_Graduate_Classes
+            [43 ,215,1],	    # Graduate-student_Language_Classes
+            [44 ,216,1],	    # Graduate-student_Music-performance_Classes
+            [45 ,219,1],	    # Admin_Less-than-1000-level_Classes
+            [46 ,220,1],	    # Admin_Undergraduate_Classes
+            [47 ,221,1],	    # Admin_4000-level_Classes
+            [48 ,222,1],	    # Admin_Graduate_Classes
+            [49 ,224,1],	    # Admin_Language_Classes
+            [50 ,225,1],	    # Admin_Music-performance_Classes
+            [51 ,228,1],	    # No-appointment_Less-than-1000-level_Classes
+            [52 ,229,1],	    # No-appointment_Undergraduate_Classes
+            [53 ,230,1],	    # No-appointment_4000-level_Classes
+            [54 ,231,1],	    # No-appointment_Graduate_Classes
+            [55 ,233,1],	    # No-appointment_Language_Classes
+            [56 ,234,1],	    # No-appointment_Music-performance_Classes
+            [57 ,165,0],	    # Tenured_Less-than-1000-level_Enrollments
+            [58 ,166,0],	    # Tenured_Undergraduate_Enrollments
+            [59 ,167,0],	    # Tenured_4000-level_Enrollments
+            [60 ,168,0],	    # Tenured_Graduate_Enrollments
+            [61 ,170,0],	    # Tenured_Language_Enrollments
+            [62 ,171,0],	    # Tenured_Music-performance_Enrollments
+            [63 ,174,0],	    # NTBOT_Less-than-1000-level_Enrollments
+            [64 ,175,0],	    # NTBOT_Undergraduate_Enrollments
+            [65 ,176,0],	    # NTBOT_4000-level_Enrollments
+            [66 ,177,0],	    # NTBOT_Graduate_Enrollments
+            [67 ,179,0],	    # NTBOT_Language_Enrollments
+            [68 ,180,0],	    # NTBOT_Music-performance_Enrollments
+            [75 ,183,0],	    # Lecturer_Less-than-1000-level_Enrollments
+            [76 ,184,0],	    # Lecturer_Undergraduate_Enrollments
+            [77 ,185,0],	    # Lecturer_4000-level_Enrollments
+            [78 ,186,0],	    # Lecturer_Graduate_Enrollments
+            [79 ,188,0],	    # Lecturer_Language_Enrollments
+            [80 ,189,0],	    # Lecturer_Music-performance_Enrollments
+            [81 ,192,0],	    # Supplemental_Less-than-1000-level_Enrollments
+            [82 ,193,0],	    # Supplemental_Undergraduate_Enrollments
+            [83 ,194,0],	    # Supplemental_4000-level_Enrollments
+            [84 ,195,0],	    # Supplemental_Graduate_Enrollments
+            [85 ,197,0],	    # Supplemental_Language_Enrollments
+            [86 ,198,0],	    # Supplemental_Music-performance_Enrollments
+            [87 ,201,0],	    # Part-time_Less-than-1000-level_Enrollments
+            [88 ,202,0],	    # Part-time_Undergraduate_Enrollments
+            [89 ,203,0],	    # Part-time_4000-level_Enrollments
+            [90 ,204,0],	    # Part-time_Graduate_Enrollments
+            [91 ,206,0],	    # Part-time_Language_Enrollments
+            [92 ,207,0],	    # Part-time_Music-performance_Enrollments
+            [93 ,210,0],	    # Graduate-student_Less-than-1000-level_Enrollments
+            [94 ,211,0],	    # Graduate-student_Undergraduate_Enrollments
+            [95 ,212,0],	    # Graduate-student_4000-level_Enrollments
+            [96 ,213,0],	    # Graduate-student_Graduate_Enrollments
+            [97 ,215,0],	    # Graduate-student_Language_Enrollments
+            [98 ,216,0],	    # Graduate-student_Music-performance_Enrollments
+            [99 ,219,0],	    # Admin_Less-than-1000-level_Enrollments
+            [100,220,0],	    # Admin_Undergraduate_Enrollments
+            [101,221,0],	    # Admin_4000-level_Enrollments
+            [102,222,0],	    # Admin_Graduate_Enrollments
+            [103,224,0],	    # Admin_Language_Enrollments
+            [104,225,0],	    # Admin_Music-performance_Enrollments
+            [105,228,0],	    # No-appointment_Less-than-1000-level_Enrollments
+            [106,229,0],	    # No-appointment_Undergraduate_Enrollments
+            [107,230,0],	    # No-appointment_4000-level_Enrollments
+            [108,231,0],	    # No-appointment_Graduate_Enrollments
+            [109,233,0],	    # No-appointment_Language_Enrollments
+            [110,234,0] 	    # No-appointment_Music-performance_Enrollments
+        ]
+    },
+
+    "enrl_classes_MathStat":{
+        "codetable":[
+            [1  ,5  ,0],        # Year
+            [3  ,181,1],        # Tenured_Less-than-1000-level_Classes
+            [4  ,182,1],        # Tenured_Undergraduate_Classes
+            [5  ,183,1],        # Tenured_4000-level_Classes
+            [6  ,184,1],        # Tenured_Graduate_Classes
+            [7  ,186,1],        # Tenured_Language_Classes
+            [8  ,187,1],        # Tenured_Music-performance_Classes
+            [9  ,190,1],        # NTBOT_Less-than-1000-level_Classes
+            [10 ,191,1],        # NTBOT_Undergraduate_Classes
+            [11 ,192,1],        # NTBOT_4000-level_Classes
+            [12 ,193,1],        # NTBOT_Graduate_Classes
+            [13 ,195,1],        # NTBOT_Language_Classes
+            [14 ,196,1],        # NTBOT_Music-performance_Classes
+            [15 ,199,1],        # NTBOT-professor-term_Less-than-1000-level_Classes
+            [16 ,200,1],        # NTBOT-professor-term_Undergraduate_Classes
+            [17 ,201,1],        # NTBOT-professor-term_4000-level_Classes
+            [18 ,202,1],        # NTBOT-professor-term_Graduate_Classes
+            [19 ,204,1],        # NTBOT-professor-term_Language_Classes
+            [20 ,205,1],        # NTBOT-professor-term_Music-performance_Classes
+            [21 ,208,1],        # Lecturer_Less-than-1000-level_Classes
+            [22 ,209,1],        # Lecturer_Undergraduate_Classes
+            [23 ,210,1],        # Lecturer_4000-level_Classes
+            [24 ,211,1],        # Lecturer_Graduate_Classes
+            [25 ,213,1],        # Lecturer_Language_Classes
+            [26 ,214,1],        # Lecturer_Music-performance_Classes
+            [27 ,217,1],        # Supplemental_Less-than-1000-level_Classes
+            [28 ,218,1],        # Supplemental_Undergraduate_Classes
+            [29 ,219,1],        # Supplemental_4000-level_Classes
+            [30 ,220,1],        # Supplemental_Graduate_Classes
+            [31 ,222,1],        # Supplemental_Language_Classes
+            [32 ,223,1],        # Supplemental_Music-performance_Classes
+            [33 ,226,1],        # Part-time_Less-than-1000-level_Classes
+            [34 ,227,1],        # Part-time_Undergraduate_Classes
+            [35 ,228,1],        # Part-time_4000-level_Classes
+            [36 ,229,1],        # Part-time_Graduate_Classes
+            [37 ,231,1],        # Part-time_Language_Classes
+            [38 ,232,1],        # Part-time_Music-performance_Classes
+            [39 ,235,1],        # Graduate-student_Less-than-1000-level_Classes
+            [40 ,236,1],        # Graduate-student_Undergraduate_Classes
+            [41 ,237,1],        # Graduate-student_4000-level_Classes
+            [42 ,238,1],        # Graduate-student_Graduate_Classes
+            [43 ,240,1],        # Graduate-student_Language_Classes
+            [44 ,241,1],        # Graduate-student_Music-performance_Classes
+            [45 ,244,1],        # Admin_Less-than-1000-level_Classes
+            [46 ,245,1],        # Admin_Undergraduate_Classes
+            [47 ,246,1],        # Admin_4000-level_Classes
+            [48 ,247,1],        # Admin_Graduate_Classes
+            [49 ,249,1],        # Admin_Language_Classes
+            [50 ,250,1],        # Admin_Music-performance_Classes
+            [51 ,253,1],        # No-appointment_Less-than-1000-level_Classes
+            [52 ,254,1],        # No-appointment_Undergraduate_Classes
+            [53 ,255,1],        # No-appointment_4000-level_Classes
+            [54 ,256,1],        # No-appointment_Graduate_Classes
+            [55 ,258,1],        # No-appointment_Language_Classes
+            [56 ,259,1],        # No-appointment_Music-performance_Classes
+            [57 ,181,0],        # Tenured_Less-than-1000-level_Enrollments
+            [58 ,182,0],        # Tenured_Undergraduate_Enrollments
+            [59 ,183,0],        # Tenured_4000-level_Enrollments
+            [60 ,184,0],        # Tenured_Graduate_Enrollments
+            [61 ,186,0],        # Tenured_Language_Enrollments
+            [62 ,187,0],        # Tenured_Music-performance_Enrollments
+            [63 ,190,0],        # NTBOT_Less-than-1000-level_Enrollments
+            [64 ,191,0],        # NTBOT_Undergraduate_Enrollments
+            [65 ,192,0],        # NTBOT_4000-level_Enrollments
+            [66 ,193,0],        # NTBOT_Graduate_Enrollments
+            [67 ,195,0],        # NTBOT_Language_Enrollments
+            [68 ,196,0],        # NTBOT_Music-performance_Enrollments
+            [69 ,199,0],        # NTBOT-professor-term_Less-than-1000-level_Enrollments
+            [70 ,200,0],        # NTBOT-professor-term_Undergraduate_Enrollments
+            [71 ,201,0],        # NTBOT-professor-term_4000-level_Enrollments
+            [72 ,202,0],        # NTBOT-professor-term_Graduate_Enrollments
+            [73 ,204,0],        # NTBOT-professor-term_Language_Enrollments
+            [74 ,205,0],        # NTBOT-professor-term_Music-performance_Enrollments
+            [75 ,208,0],        # Lecturer_Less-than-1000-level_Enrollments
+            [76 ,209,0],        # Lecturer_Undergraduate_Enrollments
+            [77 ,210,0],        # Lecturer_4000-level_Enrollments
+            [78 ,211,0],        # Lecturer_Graduate_Enrollments
+            [79 ,213,0],        # Lecturer_Language_Enrollments
+            [80 ,214,0],        # Lecturer_Music-performance_Enrollments
+            [81 ,217,0],        # Supplemental_Less-than-1000-level_Enrollments
+            [82 ,218,0],        # Supplemental_Undergraduate_Enrollments
+            [83 ,219,0],        # Supplemental_4000-level_Enrollments
+            [84 ,220,0],        # Supplemental_Graduate_Enrollments
+            [85 ,222,0],        # Supplemental_Language_Enrollments
+            [86 ,223,0],        # Supplemental_Music-performance_Enrollments
+            [87 ,226,0],        # Part-time_Less-than-1000-level_Enrollments
+            [88 ,227,0],        # Part-time_Undergraduate_Enrollments
+            [89 ,228,0],        # Part-time_4000-level_Enrollments
+            [90 ,229,0],        # Part-time_Graduate_Enrollments
+            [91 ,231,0],        # Part-time_Language_Enrollments
+            [92 ,232,0],        # Part-time_Music-performance_Enrollments
+            [93 ,235,0],        # Graduate-student_Less-than-1000-level_Enrollments
+            [94 ,236,0],        # Graduate-student_Undergraduate_Enrollments
+            [95 ,237,0],        # Graduate-student_4000-level_Enrollments
+            [96 ,238,0],        # Graduate-student_Graduate_Enrollments
+            [97 ,240,0],        # Graduate-student_Language_Enrollments
+            [98 ,241,0],        # Graduate-student_Music-performance_Enrollments
+            [99 ,244,0],        # Admin_Less-than-1000-level_Enrollments
+            [100,245,0],        # Admin_Undergraduate_Enrollments
+            [101,246,0],        # Admin_4000-level_Enrollments
+            [102,247,0],        # Admin_Graduate_Enrollments
+            [103,249,0],        # Admin_Language_Enrollments
+            [104,250,0],        # Admin_Music-performance_Enrollments
+            [105,253,0],        # No-appointment_Less-than-1000-level_Enrollments
+            [106,254,0],        # No-appointment_Undergraduate_Enrollments
+            [107,255,0],        # No-appointment_4000-level_Enrollments
+            [108,256,0],        # No-appointment_Graduate_Enrollments
+            [109,258,0],        # No-appointment_Language_Enrollments
+            [110,259,0]         # No-appointment_Music-performance_Enrollments
+        ]
+    },
+
+    "enrl_classes_faculty":{
+        "codetable":[
+            [1 ,5,0 ],      # Year
+            [3 ,9, 0],      # Tenured_FTE
+            [4 ,9, 1],      # Tenured_IFTE
+            [5 ,10,0],      # NTBOT_FTE
+            [6 ,10,1],      # NTBOT_IFTE
+            [9 ,12,0],      # Lecturers_Count
+            [10,13,0],      # Associates_Count
+            [11,14,0],      # Supplemental_Count
+            [12,16,0],      # Part-time-dept-appointed_Count
+            [13,17,0]       # Part-time-taught-dept-offered-classes_Count
+        ]
+    },
+
+    "enrl_classes_faculty_MathStat":{
+        "codetable":[
+            [1 ,5,0 ],   # Year
+            [3 ,9, 0],   # Tenured_FTE
+            [4 ,9, 1],   # Tenured_IFTE
+            [5 ,10,0],   # NTBOT_FTE
+            [6 ,10,1],   # NTBOT_IFTE
+            [9 ,12,0],   # Lecturers_Count
+            [10,13,0],   # Associates_Count
+            [11,14,0],   # Supplemental_Count
+            [12,16,0],   # Part-time-dept-appointed_Count
+            [13,17,0]    # Part-time-taught-dept-offered-classes_Count
+        ]
+    },
+
+    "enrl_classes_programs":{
+        "codetable":[
+            [1 , 5 , 0],    # Year
+            [3 , 21, 0],    # Majors (CC, GS)
+            [4 , 22, 0],    # Interdepartmental Major (CC, GS)
+            [5 , 23, 0],    # Concentrations (CC)
+            [6 , 24, 0],    # Concentrations & Minors (GS)
+            [7 , 25, 0],    # Minors (EN), if applicable
+            [8 , 27, 0],    # Stand-Alone Masters, if applicable
+            [9 , 28, 0],    # # of Applicants
+            [10, 29, 0],    # Selectivity (Offers Made/Applicants)
+            [11, 30, 0],    # Yield (Offers Accepted/Offers Made)
+            [12, 31, 0],    # Entering Cohort (Registered Students)
+            [13, 32, 0],    # Teaching Fellowships
+            [14, 33, 0],    # Interdepartmental Stand-Alone Masters, if applicable
+            [15, 34, 0],    # # of Applicants
+            [16, 35, 0],    # Selectivity (Offers Made/Applicants)
+            [17, 36, 0],    # Yield (Offers Accepted/Offers Made)
+            [18, 37, 0],    # Entering Cohort (Registered Students)
+            [19, 38, 0],    # Teaching Fellowships
+            [20, 39, 0],    # SPS Programs, if applicable
+            [21, 41, 0],    # Ph.D.
+            [22, 42, 0],    # # of Applicants
+            [23, 43, 0],    # Selectivity (Offers Made/Applicants)
+            [24, 44, 0],    # Yield (Offers Accepted/Offers Made)
+            [25, 45, 0],    # Entering Cohort (Registered Students)
+            [26, 46, 0],    # First Year Fellowships
+            [27, 47, 0],    # Teaching Fellowships
+            [28, 48, 0],    # Preceptors - Core
+            [29, 49, 0],    # Dissertation Fellowships
+            [30, 50, 0],    # Research Fellowships
+            [31, 51, 0],    # Graduate Research Assistants
+            [32, 52, 0],    # 8th Year and Beyond Students
+            [33, 53, 0],    # Time to Degree
+            [34, 54, 0]     # External Awards (Non-Columbia)
+        ]
+    },
+
+    "enrl_classes_programs_MathStat":{
+        "codetable":[
+            [1 , 5 , 0]     # Year
+            [3 , 22, 0],    # Majors (CC, GS)
+            [4 , 23, 0],    # Interdepartmental Major (CC, GS)
+            [5 , 24, 0],    # Concentrations (CC)
+            [6 , 25, 0],    # Concentrations & Minors (GS)
+            [7 , 26, 0],    # Minors (EN), if applicable
+            [8 , 28, 0],    # Stand-Alone Masters, if applicable
+            [9 , 29, 0],    # # of Applicants
+            [10, 30, 0],    # Selectivity (Offers Made/Applicants)
+            [11, 31, 0],    # Yield (Offers Accepted/Offers Made)
+            [12, 32, 0],    # Entering Cohort (Registered Students)
+            [13, 33, 0],    # Teaching Fellowships
+            [14, 40, 0],    # Interdepartmental Stand-Alone Masters, if applicable
+            [15, 41, 0],    # # of Applicants
+            [16, 42, 0],    # Selectivity (Offers Made/Applicants)
+            [17, 43, 0],    # Yield (Offers Accepted/Offers Made)
+            [18, 44, 0],    # Entering Cohort (Registered Students)
+            [19, 45, 0],    # Teaching Fellowships
+            [20, 46, 0],    # SPS Programs, if applicable
+            [21, 48, 0],    # Ph.D.
+            [22, 49, 0],    # # of Applicants
+            [23, 50, 0],    # Selectivity (Offers Made/Applicants)
+            [24, 51, 0],    # Yield (Offers Accepted/Offers Made)
+            [25, 52, 0],    # Entering Cohort (Registered Students)
+            [26, 53, 0],    # First Year Fellowships
+            [27, 54, 0],    # Teaching Fellowships
+            [28, 55, 0],    # Preceptors - Core
+            [29, 56, 0],    # Dissertation Fellowships
+            [30, 57, 0],    # Research Fellowships
+            [31, 58, 0],    # Graduate Research Assistants
+            [32, 59, 0],    # 8th Year and Beyond Students
+            [33, 60, 0],    # Time to Degree
+            [34, 61, 0],    # External Awards (Non-Columbia)
+            [35, 34, 0],    # Hybrid Online Stand-Alone Masters, if applicable
+            [36, 35, 0],    # # of Applicants
+            [37, 36, 0],    # Selectivity (Offers Made/Applicants)
+            [38, 37, 0],    # Yield (Offers Accepted/Offers Made)
+            [39, 38, 0],    # Entering Cohort (Registered Students)
+            [40, 39, 0],    # Teaching Fellowships
+        ]
+    }
+}
