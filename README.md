@@ -1,2 +1,2 @@
 # cu-misc-code
-Miscellaneous code
+Each code uses the same environment built from requirements.txt

@@ -1,0 +1,37 @@
+{
+
+        "SS.ANTH.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "SS.ECON.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "SS.HIST.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "SS.POLS.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "SS.SOCI.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.AHAR.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.CLAS.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.EALC.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.ENCL.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.FRRP.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.GERL.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.ITAL.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.LAIC.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.MESA.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.MUSI.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.PHIL.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.RELI.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.SLAL.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "NS.ASTR.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "NS.BIOL.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "NS.CHEM.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "NS.DEES.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "NS.EEEB.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "NS.PHYS.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "NS.PSYC.DP": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+
+        "NS.MATH.DP": ["enrl_classes_MathStat", "enrl_classes_faculty_MathStat", "enrl_classes_programs_MathStat"],
+        "NS.STAT.DP": ["enrl_classes_MathStat", "enrl_classes_faculty_MathStat", "enrl_classes_programs_MathStat"],
+
+        "SS.Div": ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "H.Div":  ["enrl_classes", "enrl_classes_faculty", "enrl_classes_programs"],
+        "NS.Div": ["enrl_classes_MathStat", "enrl_classes_faculty_MathStat", "enrl_classes_programs_MathStat"],
+        "AS.All": ["enrl_classes_MathStat", "enrl_classes_faculty_MathStat", "enrl_classes_programs_MathStat"]
+
+}

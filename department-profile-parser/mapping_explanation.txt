@@ -234,16 +234,18 @@ mapping.json but with explanation of fields:
 
     "enrl_classes_faculty_MathStat":{
         "codetable":[
-            [1 ,5,0 ],   # Year
-            [3 ,9, 0],   # Tenured_FTE
-            [4 ,9, 1],   # Tenured_IFTE
-            [5 ,10,0],   # NTBOT_FTE
-            [6 ,10,1],   # NTBOT_IFTE
-            [9 ,12,0],   # Lecturers_Count
-            [10,13,0],   # Associates_Count
-            [11,14,0],   # Supplemental_Count
-            [12,16,0],   # Part-time-dept-appointed_Count
-            [13,17,0]    # Part-time-taught-dept-offered-classes_Count
+            [1 ,5, 0]        # Year
+            [3 ,9, 0],       # Tenured_FTE
+            [4 ,9, 1],       # Tenured_IFTE
+            [5 ,10,0],       # NTBOT_FTE
+            [6 ,10,1],       # NTBOT_IFTE
+            [7 ,11,0],       # NTBOT-professor-term_FTE
+            [8 ,11,1],       # NTBOT-professor-term_IFTE
+            [9 ,13,0],       # Lecturers_Count
+            [10,14,0],       # Associates_Count
+            [11,15,0],       # Supplemental_Count
+            [12,17,0],       # Part-time-dept-appointed_Count
+            [13,18,0],       # Part-time-taught-dept-offered-classes_Count
         ]
     },
 
