@@ -5,7 +5,7 @@ import requests
 from pathlib import Path
 from bs4 import BeautifulSoup # Requires the lxml parser
 
-# === FUNCTION DEFENITIONS ===
+# === FUNCTION DEFINITIONS ===
 
 def write_data(file, *args):
     """
