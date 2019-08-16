@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 import openpyxl
 
-# === FUNCTION DEFENITIONS ===
+# === FUNCTION DEFINITIONS ===
 
 def progress_bar(n, n_max):
     sys.stdout.write('\r')
@@ -24,7 +24,8 @@ def load_json(json_path):
     return json_data
 
 def copyValues(input_sheet, output_sheet, mapping_array):
-    """
+    """Copies the values from the profile sheet
+
     - Takes the input Excel sheet
     - Iterates through columns with years
     - Copies values to the output Excel sheet according to the mapping array
@@ -35,14 +36,22 @@ def copyValues(input_sheet, output_sheet, mapping_array):
     2: how many columns to offset from the year column
        (each year takes up two columns: first the number of enrollments, then the number of classes)
 
-    Example: 
+    Args:
+        input_sheet: where the values are taken FROM
+        output_sheet: where the values are going TO
+        mapping_array: mapping between the two sheets (where a particular cell from the input sheet should go in the output sheet)
+    
+    Returns:
+        Nothing
+
+    Mapping example: 
         [65, 176, 0] means:
         1. Go to row 176 of the current column without offsetting
         2. Copy to the new row of column 65 of the output sheet
     """
 
     new_row = output_sheet.max_row + 1
-    column_with_year = range(6,33,2) # Each year takes up two columns
+    column_with_year = range(6,35,2) # Each year takes up two columns
 
     for year in column_with_year:
         # Iterate through all values
