@@ -3,7 +3,8 @@ Searches Word files with a regex expression
 Windows only
 
 Environment variables:
-    FOLDER: path to a folder where the search will start 
+    WORD_FOLDER: path to a folder where the search will start 
+    DEST_FOLDER: path to a folder where the output will be saved to
     REGEX: regex expression used in search
 """
 
@@ -14,6 +15,7 @@ import os
 import json
 import sys
 import re
+import csv
 
 # Third party imports
 from dotenv import load_dotenv
@@ -36,15 +38,47 @@ load_dotenv(dotenv_path=env_path)
 word = win32com.client.Dispatch("Word.Application")
 word.visible = False
 
-doc = word.Documents.Open(os.getenv('FOLDER'))
-doc_text = doc.Range().Text
-
+word_folder = os.getenv('WORD_FOLDER')
 regex = re.compile(os.getenv('REGEX'))
-doc_text_match = regex.search(doc_text)
 
-if doc_text_match is None:
-    print("No match found")
-else:
-    print("Match found")
+word_generator_1 = Path(word_folder).rglob("*.doc") # Use globbing to return a list of Path objects to all .doc files, including from subfolders
+word_list = [i for i in word_generator_1]
+word_generator_2 = Path(word_folder).rglob("*.docx")
+for item in word_generator_2:
+    word_list.append(item)
+word_matches = []
 
-doc.Close(False) # Close without saving
+print(word_list)
+
+n = 0
+n_max = len(word_list)
+print("\nParsing Word: ")
+
+for word_path in word_list:
+
+    doc = word.Documents.Open(str(word_path))
+    doc_text = doc.Range().Text
+
+    doc_text_match = regex.findall(doc_text) # List of tuples
+
+    if doc_text_match:
+        to_insert = [word_path.stem]
+        doc_text_match = [list(filter(None, i)) for i in doc_text_match] # Clean up tuple to remove empty strings and convert to list
+        # Concatenate lists:
+        for group in doc_text_match:
+            to_insert.append(group)
+        word_matches.append(to_insert)
+
+    doc.Close(False) # Close without saving
+    progress_bar(n, n_max)
+    n = n + 1
+
+
+dest_folder = os.getenv('DEST_FOLDER')
+dest_file = Path(dest_folder) / 'output_word.csv'
+
+with open(dest_file, 'w+', newline='') as f:
+    writer = csv.writer(f)
+    writer.writerows(word_matches)
+
+print("\nDone!")
