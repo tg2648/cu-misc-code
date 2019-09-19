@@ -4,10 +4,10 @@
 import os
 import json
 import sys
+from pathlib import Path
 
 # Third party imports
 from dotenv import load_dotenv
-from pathlib import Path
 import openpyxl
 
 # === FUNCTION DEFINITIONS ===

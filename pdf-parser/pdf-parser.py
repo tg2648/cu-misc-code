@@ -20,10 +20,10 @@ import os
 import sys
 import re
 import csv
+from pathlib import Path
 
 # Third party imports
 from dotenv import load_dotenv
-from pathlib import Path
 from PIL import Image
 import pytesseract
 from pdf2image import convert_from_path

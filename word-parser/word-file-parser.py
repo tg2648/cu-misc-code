@@ -16,10 +16,10 @@ import json
 import sys
 import re
 import csv
+from pathlib import Path
 
 # Third party imports
 from dotenv import load_dotenv
-from pathlib import Path
 import win32com.client
 
 # Local application imports

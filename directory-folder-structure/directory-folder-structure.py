@@ -1,6 +1,6 @@
 # === IMPORTS ===
 
-# Third party imports
+# Standard library imports
 from pathlib import Path
 
 # === FUNCTION DEFINITIONS ===
