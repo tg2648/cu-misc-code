@@ -34,7 +34,7 @@ from dotenv import load_dotenv
 from ldap3 import Server, Connection, SUBTREE
 
 # Local application imports
-sys.path.append(str(Path(__file__).parent.parent.resolve())) # Add parent directory to sys.path to import utils.py
+sys.path.append(str(Path(__file__).parent.parent.resolve()))  # Add parent directory to sys.path to import utils.py
 from utils import progress_bar
 
 
@@ -44,9 +44,9 @@ def ldap_search(input_file_path, output_file_path, attrlist, query_type='mail'):
         input_file_path: string; file containing keys to be searched
         output_file_path: string; file that the output will be written to
         attrlist: list; LDAP attributes of interest
-        query_type: string; 
-            If mail, queries on email address 
-            If uni, queries on uni 
+        query_type: string;
+            If mail, queries on email address
+            If uid, queries on uni
     """
 
     server = Server(os.getenv('LDAP_SERVER'))
@@ -76,7 +76,7 @@ def ldap_search(input_file_path, output_file_path, attrlist, query_type='mail'):
             output = [key]
             # query LDAP with the selected query_type
             conn.search(ldap_base, f"({query_type}={key})", search_scope=SUBTREE, attributes=attrlist)
-            
+
             # non-matches return empty lists
             if len(conn.response) > 0:
                 # since there should only be one match on key, get the first response and then its attributes as a dict
@@ -93,7 +93,7 @@ def ldap_search(input_file_path, output_file_path, attrlist, query_type='mail'):
             else:
                 # if non-match, then fill with n/a's
                 for i in attrlist:
-                    output.append("n/a") 
+                    output.append("n/a")
 
             # append newline after all attributes were parsed and write to file
             output.append('\n')
@@ -104,6 +104,7 @@ def ldap_search(input_file_path, output_file_path, attrlist, query_type='mail'):
 
     # Close the LDAP connection
     conn.unbind()
+
 
 if __name__ == '__main__':
 
@@ -130,4 +131,4 @@ if __name__ == '__main__':
         'mail'
     ]
 
-    ldap_search(input_file_path, output_file_path, attrlist, query_type='mail')
+    ldap_search(input_file_path, output_file_path, attrlist, query_type='uid')
