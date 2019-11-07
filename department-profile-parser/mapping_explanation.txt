@@ -100,6 +100,22 @@ mapping.json but with explanation of fields:
             [108,231,0],	    # No-appointment_Graduate_Enrollments
             [109,233,0],	    # No-appointment_Language_Enrollments
             [110,234,0] 	    # No-appointment_Music-performance_Enrollments
+            [111,76 ,1],		# Tenured_Core_Classes
+            [112,76 ,0],		# Tenured_Core_Enrollments
+            [113,85 ,1],		# NTBOT_Core_Classes
+            [114,85 ,0],        # NTBOT_Core_Enrollments
+            [115,94 ,1],		# Lecturer_Core_Classes
+            [116,94 ,0],     	# Lecturer_Core_Enrollments
+            [117,103,1],	    # Supplemental_Core_Classes
+            [118,103,0],	    # Supplemental_Core_Enrollments
+            [119,112,1],   	    # Part-time_Core_Classes
+            [120,112,0],        # Part-time_Core_Enrollments
+            [121,121,1],	    # Graduate-student_Core_Classes
+            [122,121,0],	    # Graduate-student_Core_Enrollments
+            [123,130,1],	    # Admin_Core_Classes
+            [124,130,0],	    # Admin_Core_Enrollments
+            [125,139,1],        # No-appointment_Core_Classes
+            [126,139,0]         # No-appointment_Core_Enrollments
         ]
     },
 
@@ -213,7 +229,25 @@ mapping.json but with explanation of fields:
             [107,255,0],        # No-appointment_4000-level_Enrollments
             [108,256,0],        # No-appointment_Graduate_Enrollments
             [109,258,0],        # No-appointment_Language_Enrollments
-            [110,259,0]         # No-appointment_Music-performance_Enrollments
+            [110,259,0],        # No-appointment_Music-performance_Enrollments
+            [111,83, 1],		# Tenured_Core_Classes
+            [112,83, 0],		# Tenured_Core_Enrollments
+            [113,92, 1],		# NTBOT_Core_Classes
+            [114,92, 0],        # NTBOT_Core_Enrollments
+            [115,101,1],    	# NTBOT-professor-term_Core_Classes
+            [116,101,0],    	# NTBOT-professor-term_Core_Enrollments
+            [117,110,1], 	    # Lecturer_Core_Classes
+            [118,110,0],     	# Lecturer_Core_Enrollments
+            [119,119,1], 	    # Supplemental_Core_Classes
+            [120,119,0],        # Supplemental_Core_Enrollments
+            [121,128,1],	    # Part-time_Core_Classes
+            [122,128,0],	    # Part-time_Core_Enrollments
+            [123,137,1],	    # Graduate-student_Core_Classes
+            [124,137,0],	    # Graduate-student_Core_Enrollments
+            [125,146,1],	    # Admin_Core_Classes
+            [126,146,0],	    # Admin_Core_Enrollments
+            [127,155,1],        # No-appointment_Core_Classes
+            [128,155,0]         # No-appointment_Core_Enrollments 
         ]
     },
 
