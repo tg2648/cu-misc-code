@@ -37,15 +37,15 @@ class ValueComparator(object):
     def difference(self):
         """Calculates a difference from two sets.
 
-        Writes the difference (elements in set 1 that are not in  set 2) to a file with `_write_output`.
+        Writes the difference (elements in set 1 that are not in set 2) to a file with `_write_output`.
         """
 
         result = self.vals1 - self.vals2
-        self._write_output('set-comparison/difference.csv', result)
+        self._write_output('set_comparison/difference.csv', result)
 
 
 if __name__ == "__main__":
 
-    Comparator = ValueComparator('set-comparison/input1.csv', 'set-comparison/input2.csv')
+    Comparator = ValueComparator('set_comparison/input1.csv', 'set_comparison/input2.csv')
     Comparator.difference()
     print('Done')
