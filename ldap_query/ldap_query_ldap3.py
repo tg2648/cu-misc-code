@@ -46,7 +46,7 @@ def ldap_search(input_file_path, output_file_path, attrlist, query_type='mail'):
         attrlist: list; LDAP attributes of interest
         query_type: string;
             If mail, queries on email address
-            If uid, queries on uni
+            If uni, queries on uni
     """
 
     server = Server(os.getenv('LDAP_SERVER'))
@@ -131,4 +131,4 @@ if __name__ == '__main__':
         'mail'
     ]
 
-    ldap_search(input_file_path, output_file_path, attrlist, query_type='uid')
+    ldap_search(input_file_path, output_file_path, attrlist, query_type='uni')
