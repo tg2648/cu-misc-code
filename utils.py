@@ -2,12 +2,9 @@
 Utility functions
 """
 
-# === IMPORTS ===
-
 # Standard library imports
 import sys
 
-# === FUNCTION DEFINITIONS ===
 
 def progress_bar(n, n_max):
     sys.stdout.write('\r')
