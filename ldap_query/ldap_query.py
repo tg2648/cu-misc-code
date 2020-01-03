@@ -43,11 +43,9 @@ sys.path.append(str(Path(__file__).parent.parent.resolve()))  # Add parent direc
 
 
 class LDAPConnection(object):
-    """Summary line.
+    """Provides an LDAP interface for convenient searching and saving/displaying of results.
 
-    Longer class description...
-
-    Class Attributes:
+     Class Attributes:
         attrlist (tuple -> str): LDAP attributes of interest
 
     Instance Attributes:
@@ -79,7 +77,7 @@ class LDAPConnection(object):
         self.search_results = {}
 
     def search(self, keys, key_type):
-        """Performs an LDAP search
+        """Performs an LDAP search.
 
         Populates a JSON-like dictionary. If attribute is not present, writes 'n/a'.
 
