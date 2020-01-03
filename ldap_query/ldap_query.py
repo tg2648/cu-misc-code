@@ -48,14 +48,16 @@ class LDAPConnection(object):
     Longer class description...
 
     Class Attributes:
-        _attrlist (tuple -> str): LDAP attributes of interest
+        attrlist (tuple -> str): LDAP attributes of interest
 
     Instance Attributes:
         server_url (str): LDAP server URL
         ldap_base (str): LDAP base dn
+        keys (list -> str): List of keys that will be searched
+        search_results (dict -> dict): JSON-like dictionary with key-value pairs as `'key': {'attr': 'attr_value'}`
     """
 
-    _attrlist = (
+    attrlist = (
         'uid',
         'sn',
         'givenName',
@@ -69,7 +71,8 @@ class LDAPConnection(object):
     )
 
     def __init__(self, server_url, ldap_base):
-        self._server = Server(server_url)
+        self.server_url = server_url
+        self._server = Server(self.server_url)
         self._conn = Connection(self._server)
         self.ldap_base = ldap_base
         self.keys = []
@@ -99,17 +102,17 @@ class LDAPConnection(object):
 
         with self._conn as c:
             for key in set(keys):  # Operate on a set to remove duplicates
-                c.search(self.ldap_base, f"({key_type}={key})", search_scope=SUBTREE, attributes=self._attrlist)
+                c.search(self.ldap_base, f"({key_type}={key})", search_scope=SUBTREE, attributes=self.attrlist)
                 if c.response:  # Non-matches return empty lists
                     response = c.response[0]['attributes']  # Response is a list of dictionaries
                     self.search_results[key] = {}
-                    for attr in self._attrlist:
+                    for attr in self.attrlist:
                         if response[attr]:  # Each attribute is a list of strings
                             self.search_results[key][attr] = response[attr][0]
                         else:
                             self.search_results[key][attr] = 'n/a'
                 else:
-                    for attr in self._attrlist:
+                    for attr in self.attrlist:
                         self.search_results[key][attr] = 'n/a'
 
     def to_csv(self, path):
@@ -120,7 +123,7 @@ class LDAPConnection(object):
         Requires an environment variable `LDAP_OUTPUT` with a valid path.
         """
         with open(path, 'w', newline='') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=self._attrlist)
+            writer = csv.DictWriter(csvfile, fieldnames=self.attrlist)
             writer.writeheader()
             for key in self.keys:
                 writer.writerow(self.search_results[key])
@@ -139,7 +142,7 @@ class LDAPConnection(object):
         str_out = []
         for key in self.keys:
             str_out.append(f'{key}:')
-            for attr in self._attrlist:
+            for attr in self.attrlist:
                 str_out.append(f'\t{attr}: {self.search_results[key][attr]}')
             str_out.append('')
 
