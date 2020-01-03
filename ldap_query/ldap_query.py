@@ -137,13 +137,13 @@ class LDAPConnection(object):
 
     def to_print(self):
         """
-        Prints in a friendly format
+        Prints LDAP search results in a friendly format
         """
         str_out = []
         for key in self.keys:
             str_out.append(f'{key}:')
             for attr in self.attrlist:
-                str_out.append(f'\t{attr}: {self.search_results[key][attr]}')
+                str_out.append(f'\t{attr:<16}{self.search_results[key][attr]}')
             str_out.append('')
 
         print('\n'.join(str_out))
