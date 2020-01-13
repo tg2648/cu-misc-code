@@ -9,6 +9,7 @@ sn - last name
 ou - full department name
 mail - email
 givenName - first name
+cn - full name
 uid - uni
 uni - uni
 postalAddress - mailing address
@@ -57,6 +58,7 @@ class LDAPConnection(object):
 
     attrlist = (
         'uid',
+        'cn',
         'sn',
         'givenName',
         'title',
@@ -158,4 +160,5 @@ if __name__ == "__main__":
 
     ldap = LDAPConnection(server_url=os.getenv('LDAP_SERVER'), ldap_base=os.getenv('LDAP_BASE'))
     ldap.search(keys=keys, key_type='uni')
-    ldap.to_csv(os.getenv('LDAP_OUTPUT'))
+    # ldap.to_csv(os.getenv('LDAP_OUTPUT'))
+    ldap.to_print()
