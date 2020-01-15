@@ -1,0 +1,23 @@
+{
+    "Fiscal_Year": "A",
+    "Academic_Year": "B",
+    "Division_Code": "C",
+    "Department_Code": "D",
+    "Tenure_Status": "E",
+    "Rank": "F",
+    "Name": "G",
+    "FTE": "H",
+    "AS_Wide": "I",
+    "Joint_Interdisc": "J",
+    "Retire_Up-or-Out_Resign": "K",
+    "Leave_AT": "L",
+    "Leave_ST": "M",
+    "Named_Prof": "N",
+    "Diversity_Tag": "O",
+    "Non_Renewable_Term": "P",
+    "Appointment_Notes": "Q",
+    "Lecturer_Language": "R",
+    "Research_Funds": "S",
+    "UNI": "T",
+    "Salary": "U"
+}

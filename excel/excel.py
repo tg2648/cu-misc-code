@@ -27,7 +27,9 @@ class ExcelHandler(object):
                 try:
                     excel = win32.gencache.EnsureDispatch('Excel.Application')
                     wb = excel.Workbooks.Open(self.path.as_posix())
-                    wb.SaveAs(self.path.as_posix(), FileFormat=51)  # FileFormat = 51 for the .xlsx extension
+                    # FileFormat = 51 for the .xlsx extension
+                    # Convert `Path` object to `str`, SaveAs does not like `Path` objects
+                    wb.SaveAs(str(path_xlsx), FileFormat=51)
                     wb.Close()
                     excel.Application.Quit()
                 except:
