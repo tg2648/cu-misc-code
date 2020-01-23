@@ -96,6 +96,10 @@ class FacultyMasterlistHandler(ExcelHandler):
                 # Ignore if name is empty
                 name_column = column_index_from_string(INPUT_COLUMN_MAPPING[tenure_status]['Name'])
                 name_value = sheet.cell(row=cell.row, column=name_column).value
+
+                if isinstance(name_value, str):
+                    name_value = name_value.strip()
+
                 if name_value:
                     # Go through columns and perform copying
                     for data_type, input_column_letter in INPUT_COLUMN_MAPPING[tenure_status].items():
@@ -122,6 +126,7 @@ class FacultyMasterlistHandler(ExcelHandler):
             1. Write headers to the new workbook
             2. Apply corrections to tenure status and rank
             3. Copy data from original to new workbook
+            4. Save new workbook
         """
         self._write_headers(self.new_wb.active)
 
