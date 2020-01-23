@@ -76,6 +76,38 @@
         "Named_Prof": "M",
         "UNI": "O",
         "Research_Funds": "Q"
+    },
+
+    "Other Full-Time: FOS": {
+        "Tenure_Status": "A",
+        "Rank": "B",
+        "Name": "C",
+        "FTE": "D",
+        "Salary": "E",
+        "AS_Wide": "G",
+        "Non_Renewable_Term": "H",
+        "Lecturer_Language": "I",
+        "Leave_AT": "J",
+        "Leave_ST": "K",
+        "Named_Prof": "M",
+        "UNI": "O",
+        "Research_Funds": "Q"
+    },
+
+    "Other Full-Time: DOI": {
+        "Tenure_Status": "A",
+        "Rank": "B",
+        "Name": "C",
+        "FTE": "D",
+        "Salary": "E",
+        "AS_Wide": "G",
+        "Non_Renewable_Term": "H",
+        "Lecturer_Language": "I",
+        "Leave_AT": "J",
+        "Leave_ST": "K",
+        "Named_Prof": "M",
+        "UNI": "O",
+        "Research_Funds": "Q"
     }
     
 }
