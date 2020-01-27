@@ -40,7 +40,7 @@ from ldap3 import Server, Connection, SUBTREE
 
 # Local application imports
 sys.path.append(str(Path(__file__).parent.parent.resolve()))  # Add parent directory to sys.path to import utils.py
-# from utils import progress_bar
+from utils import progress_bar
 
 
 class LDAPConnection(object):
@@ -99,34 +99,39 @@ class LDAPConnection(object):
             key_type (str): What the key represents (uni, email, etc.)
         """
         self.keys = keys  # Save keys for writing out operations
+        n_max = len(keys)
+        n = 0
 
         with self._conn as c:
-            for key in set(keys):  # Operate on a set to remove duplicates
-                c.search(self.ldap_base, f"({key_type}={key})", search_scope=SUBTREE, attributes=self.attrlist)
-                if c.response:  # Non-matches return empty lists
-                    response = c.response[0]['attributes']  # Response is a list of dictionaries
+            for key in keys:
+                if key not in self.search_results:
                     self.search_results[key] = {}
-                    for attr in self.attrlist:
-                        if response[attr]:  # Each attribute is a list of strings
-                            self.search_results[key][attr] = response[attr][0]
-                        else:
+                    c.search(self.ldap_base, f"({key_type}={key})", search_scope=SUBTREE, attributes=self.attrlist)
+                    if c.response:  # Non-matches return empty lists
+                        response = c.response[0]['attributes']  # Response is a list of dictionaries
+                        for attr in self.attrlist:
+                            if response[attr]:  # Each attribute is a list of strings
+                                self.search_results[key][attr] = response[attr][0]
+                            else:
+                                self.search_results[key][attr] = 'n/a'
+                    else:
+                        for attr in self.attrlist:
                             self.search_results[key][attr] = 'n/a'
-                else:
-                    for attr in self.attrlist:
-                        self.search_results[key][attr] = 'n/a'
+
+                progress_bar(n, n_max)
+                n = n + 1
 
     def to_csv(self, path):
         """
         Writes search results to a csv file. Preserves duplicates if `keys` contained duplicate values.
         Each row is a key from `keys`, each column is an attribute value.
-
-        Requires an environment variable `LDAP_OUTPUT` with a valid path.
         """
+        fieldnames = ['key', *self.attrlist]
         with open(path, 'w', newline='') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=self.attrlist)
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             for key in self.keys:
-                writer.writerow(self.search_results[key])
+                writer.writerow({'key': key, **self.search_results[key]})
 
     def to_json(self, path):
         """
@@ -160,5 +165,5 @@ if __name__ == "__main__":
 
     ldap = LDAPConnection(server_url=os.getenv('LDAP_SERVER'), ldap_base=os.getenv('LDAP_BASE'))
     ldap.search(keys=keys, key_type='uni')
-    # ldap.to_csv(os.getenv('LDAP_OUTPUT'))
-    ldap.to_print()
+    ldap.to_csv(os.getenv('LDAP_OUTPUT'))
+    # ldap.to_print()
