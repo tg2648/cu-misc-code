@@ -1,10 +1,10 @@
 astroid==2.2.5
 autopep8==1.4.4
-awsebcli==3.15.2
 bandit==1.6.2
 beautifulsoup4==4.7.1
 blessed==1.15.0
-botocore==1.12.231
+boto3==1.11.13
+botocore==1.14.13
 bs4==0.0.1
 cached-property==1.5.1
 cement==2.8.2
@@ -34,10 +34,11 @@ kiwisolver==1.1.0
 lazy-object-proxy==1.4.1
 ldap3==2.6.1
 lxml==4.3.4
+MarkupSafe==1.1.1
 matplotlib==3.1.2
 mccabe==0.6.1
 numpy==1.17.4
-openpyxl==2.6.2
+openpyxl==2.6.4
 pandas==0.25.3
 pathlib==1.0.1
 pathspec==0.5.9
@@ -59,6 +60,7 @@ pytz==2019.1
 pywin32==225
 PyYAML==3.13
 requests==2.20.1
+s3transfer==0.3.3
 scipy==1.4.0
 semantic-version==2.5.0
 six==1.12.0
@@ -72,5 +74,6 @@ urllib3==1.24.3
 wcwidth==0.1.7
 websocket-client==0.56.0
 wrapt==1.11.1
+xlrd==1.2.0
 yapf==0.28.0
 zope.interface==4.6.0
