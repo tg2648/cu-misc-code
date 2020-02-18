@@ -11,3 +11,9 @@ return
 CapsLock & f::
 SendInput, !hsf 
 return
+
+; CapsLock + T: Toggle table (Alt+H+T+Enter+Enter)
+#IfWinActive ahk_exe Excel.exe
+CapsLock & t::
+SendInput, !ht{Enter}{Enter}
+return
