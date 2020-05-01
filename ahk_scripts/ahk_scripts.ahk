@@ -1,4 +1,6 @@
+; -----
 ; Excel
+; -----
 
 ; CapsLock + C: Clear filter (Alt+H+S+C)
 #IfWinActive ahk_exe Excel.exe
@@ -16,4 +18,14 @@ return
 #IfWinActive ahk_exe Excel.exe
 CapsLock & t::
 SendInput, !ht{Enter}{Enter}
+return
+
+; -------
+; Outlook
+; -------
+
+; CapsLock + S: Add signature
+#IfWinActive ahk_exe Outlook.exe
+CapsLock & s::
+SendInput, !eas{Enter}
 return
