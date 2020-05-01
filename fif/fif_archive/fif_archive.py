@@ -5,6 +5,7 @@ Populates an S3 bucket for the FIF Archive
 # Standard library
 import os
 import csv
+import sys
 import logging
 from pathlib import Path
 
@@ -37,6 +38,8 @@ def upload(file_path, key, bucket):
     return True
 
 
+logging.basicConfig(level=logging.INFO)
+
 BASEDIR = Path(__file__).parent.resolve()
 env_path = BASEDIR / '.env'
 load_dotenv(dotenv_path=env_path)
@@ -52,7 +55,11 @@ bucket = s3_resource.Bucket(os.getenv('S3_FIF_BUCKET_NAME'))
 with open(os.getenv('FIF_MAP'), newline='') as csvfile:
     FIF_FOLDER = Path(os.getenv('FIF_FOLDER'))
     reader = csv.DictReader(csvfile)
+
     for row in reader:
         fif_path = FIF_FOLDER / row['Filename']
         key = f"{row['UNI']}/{row['Filename']}"
         upload(file_path=fif_path.as_posix(), key=key, bucket=bucket)
+        logging.info(f'Uploaded: {key}')
+
+    logging.info(f'DONE')
