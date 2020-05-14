@@ -96,7 +96,7 @@ class LDAPConnection(object):
 
         Args:
             keys (list): Keys to search, may contain duplicates.
-            key_type (str): What the key represents (uni, email, etc.)
+            key_type (str): What the key represents (uni, mail, etc.)
         """
         self.keys = keys  # Save keys for writing out operations
         n_max = len(keys)
