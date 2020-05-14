@@ -1,4 +1,7 @@
 """
+Given a list of faculty by year, create a "pivot" where the rows are a union of faculty from all years,
+the columns are years. The values are the faculty's FTE for that year or `null`
+if person was not present in that year.
 """
 
 # Standard Library
@@ -65,7 +68,7 @@ for dept in depts:
     dept_uni_set = df_dept[UNI_NAME].unique()  # Everyone who has ever been with the department
 
     for uni in dept_uni_set:
-        # Extract personal information based on the year of the first occurence of the person
+        # Extract personal information based on the year of the first occurrence of the person
         df_person_filter = df_dept[UNI_NAME] == uni
         person = df_dept[df_person_filter].iloc[0]
         csv_row = [
