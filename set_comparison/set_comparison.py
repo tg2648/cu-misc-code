@@ -42,10 +42,16 @@ class ValueComparator(object):
 
         result = self.vals1 - self.vals2
         self._write_output('set_comparison/difference.csv', result)
+        
+    def eq(self) -> bool:
+        """Returns true if two sets are equal"""
+        
+        return self.vals1 == self.vals2
 
 
 if __name__ == "__main__":
 
     Comparator = ValueComparator('set_comparison/input1.csv', 'set_comparison/input2.csv')
-    Comparator.difference()
-    print('Done')
+    # Comparator.difference()
+    # print('Done')
+    print(Comparator.eq())
