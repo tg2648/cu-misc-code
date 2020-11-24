@@ -52,7 +52,7 @@ def copyValues(input_sheet, output_sheet, mapping_array):
     """
 
     new_row = output_sheet.max_row + 1
-    column_with_year = range(6, 35, 2)  # Each year takes up two columns
+    column_with_year = range(6, 37, 2)  # Each year takes up two columns
 
     for year in column_with_year:
         # Iterate through all values
