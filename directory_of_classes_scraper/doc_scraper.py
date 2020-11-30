@@ -292,6 +292,7 @@ class DirectoryClass(object):
         handlers = {
             'Day & Time Location': self._get_dtl,
             'Instructor': self._get_instructor,
+            'Instructors': self._get_mult_instructors,
             'Web Site': self._get_website,
             'Enrollment': self._get_enrl,
 
@@ -407,6 +408,24 @@ class DirectoryClass(object):
                 self.data['Room'] = room
                 self.data['Building'] = building
 
+    def _get_mult_instructors(self, row):
+        """
+        Gets all instructor names for classes with multiple instructors.
+        """
+        instructors = []
+        try:
+            strings = row.contents[2].strings
+            for str in strings:
+                instructor = str.strip()
+                if instructor:
+                    instructors.append(instructor)
+        except Exception:
+            print(f'ERROR: Failed to get multiple instructors from {self.url}')
+            instructors = ['']
+        finally:
+            for i, instructor in enumerate(instructors):
+                self.data[f'Instructor_{i + 1}'] = instructor
+
     def _get_instructor(self, row):
         """
         Gets instructor's name. Some classes include instructor's website and/or email.
@@ -423,7 +442,7 @@ class DirectoryClass(object):
             print(f'ERROR: Failed to get instructor from {self.url}')
             instructor = ''
         finally:
-            self.data['Instructor'] = instructor
+            self.data['Instructor_1'] = instructor
 
     def _get_website(self, row):
         try:
@@ -456,57 +475,59 @@ class DirectoryClass(object):
             self.data['Enrollment'] = ''
 
 
-BASE = 'http://www.columbia.edu'
-DIRECTORY = '/cu/bulletin/uwb/sel/departments.html'
-DEPARTMENT_ROW_START = 3  # Where list of depts starts
-SKIP_NON_AS = 1  # Whether to skip non-A&S depts
+if __name__ == "__main__":
 
-# Keep track of CSV column headers
-fieldnames = set()
+    BASE = 'http://www.columbia.edu'
+    DIRECTORY = '/cu/bulletin/uwb/sel/departments.html'
+    DEPARTMENT_ROW_START = 3  # Where list of depts starts
+    SKIP_NON_AS = 1  # Whether to skip non-A&S depts
 
-# Go through all departments
-soup = get_soup_from_url(urljoin(base=BASE, url=DIRECTORY))
-rows = soup.find_all('tr')
+    # Keep track of CSV column headers
+    fieldnames = set()
 
-class_data = []
-# Ignore the footer row
-for row in rows[DEPARTMENT_ROW_START:-1]:
-    dept_name = row.contents[0].string
+    # Go through all departments
+    soup = get_soup_from_url(urljoin(base=BASE, url=DIRECTORY))
+    rows = soup.find_all('tr')
 
-    if SKIP_NON_AS:
-        if NAME_MAPPING.get(dept_name, {}).get('School', 'Other') != 'A&S':
-            print(f'SKIPPING: {dept_name}')
-            continue
+    class_data = []
+    # Ignore the footer row
+    for row in rows[DEPARTMENT_ROW_START:-1]:
+        dept_name = row.contents[0].string
 
-    term_links = row.find_all('a')
+        if SKIP_NON_AS:
+            if NAME_MAPPING.get(dept_name, {}).get('School', 'Other') != 'A&S':
+                print(f'SKIPPING: {dept_name}')
+                continue
 
-    # Follow all term links if exist
-    term = ''
-    for link in term_links:
-        term = link.string
+        term_links = row.find_all('a')
 
-        # Follow all links whose text starts with Section and extract data
-        term_soup = get_soup_from_url(urljoin(base=BASE, url=link['href']))
-        class_links = term_soup.find_all('a', href=True, text=re.compile('^Section'))
+        # Follow all term links if exist
+        term = ''
+        for link in term_links:
+            term = link.string
 
-        for link in class_links:
-            class_info = DirectoryClass(url=urljoin(base=BASE, url=link['href']))
-            class_data.append(class_info.data)
-            fieldnames.update(class_info.fieldnames)
+            # Follow all links whose text starts with Section and extract data
+            term_soup = get_soup_from_url(urljoin(base=BASE, url=link['href']))
+            class_links = term_soup.find_all('a', href=True, text=re.compile('^Section'))
 
-        print(f'{dept_name} - {term} done.')
+            for link in class_links:
+                class_info = DirectoryClass(url=urljoin(base=BASE, url=link['href']))
+                class_data.append(class_info.data)
+                fieldnames.update(class_info.fieldnames)
 
-if class_data:
-    # Pickle backup
-    with open(f'directory_of_classes_scraper/backup.bak', 'wb') as f:
-        pickle.dump(class_data, f)
+            print(f'{dept_name} - {term} done.')
 
-    # Write to CSV
-    timestamp = datetime.date.today()
-    with open(f'directory_of_classes_scraper/{timestamp}.csv', 'w', newline='', encoding='utf-8') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
-        for data in class_data:
-            writer.writerow(data)
-else:
-    print("No data to write.")
+    if class_data:
+        # Pickle backup
+        with open(f'directory_of_classes_scraper/backup.bak', 'wb') as f:
+            pickle.dump(class_data, f)
+
+        # Write to CSV
+        timestamp = datetime.date.today()
+        with open(f'directory_of_classes_scraper/{timestamp}.csv', 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            for data in class_data:
+                writer.writerow(data)
+    else:
+        print("No data to write.")
